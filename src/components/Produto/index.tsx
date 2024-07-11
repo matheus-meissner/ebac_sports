@@ -1,5 +1,8 @@
+// src/components/Produto/index.tsx
 import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../slices/cartSlice'
 
 type Props = {
   produto: ProdutoType
@@ -19,6 +22,12 @@ const ProdutoComponent = ({
   favoritar,
   estaNosFavoritos
 }: Props) => {
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (produto: ProdutoType) => {
+    dispatch(addToCart(produto))
+  }
+
   return (
     <S.Produto>
       <S.Capa>
@@ -33,7 +42,7 @@ const ProdutoComponent = ({
           ? '- Remover dos favoritos'
           : '+ Adicionar aos favoritos'}
       </S.BtnComprar>
-      <S.BtnComprar onClick={() => aoComprar(produto)} type="button">
+      <S.BtnComprar onClick={() => handleAddToCart(produto)} type="button">
         Adicionar ao carrinho
       </S.BtnComprar>
     </S.Produto>

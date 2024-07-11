@@ -1,11 +1,11 @@
+// src/App.tsx
 import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
-
 import { GlobalStyle } from './styles'
 
-export type Produto = {
-  id: number
+export interface Produto {
+  id: string
   nome: string
   preco: number
   imagem: string

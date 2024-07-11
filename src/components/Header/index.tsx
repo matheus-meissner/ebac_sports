@@ -1,12 +1,13 @@
+// src/components/Header/index.tsx
 import * as S from './styles'
-
 import { Produto } from '../../App'
-
 import cesta from '../../assets/cesta.png'
 import { paraReal } from '../Produto'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 type Props = {
-  itensNoCarrinho: Produto[]
+  itensNoCarrinho: Produto[] // Adicionar esta linha
   favoritos: Produto[]
 }
 
