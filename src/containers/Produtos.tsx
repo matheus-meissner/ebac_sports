@@ -1,6 +1,5 @@
 import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
-
 import * as S from './styles'
 
 type Props = {

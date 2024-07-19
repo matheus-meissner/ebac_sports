@@ -11,7 +11,9 @@ type Props = {
   favoritos: Produto[]
 }
 
-const Header = ({ itensNoCarrinho, favoritos }: Props) => {
+const Header = ({ favoritos }: Props) => {
+  const itensNoCarrinho = useSelector((state: RootState) => state.cart)
+
   const valorTotal = itensNoCarrinho.reduce((acc, item) => {
     acc += item.preco
     return acc
